@@ -3,7 +3,7 @@ import { axiosInstance } from '../helper/axios-config';
 
 const gettipo = () => {
 
-    return axiosInstance.get('tipo', {
+    return axiosInstance.get('tipos', {
         headers:{
             'Content-type':'application/json'
         }
@@ -12,25 +12,25 @@ const gettipo = () => {
 }
 const createtipo = (data) => {
 
-    return axiosInstance.get('tipo', data, {
+    return axiosInstance.post('tipos', data, {
         headers:{
             'Content-type':'application/json'
         }
     });
 
 }
-const updatetipo = (tipoId, data) => {
+const updatetipo = (idtipo, data) => {
 
-    return axiosInstance.get(`tipos/${idtipo}`,data, {
+    return axiosInstance.put(`tipos/${idtipo}`,data, {
         headers:{
             'Content-type':'application/json'
         }
     });
 
 }
-const deletetipo = (tipoId) => {
+const deletetipo = (idtipo) => {
 
-    return axiosInstance.get(`tipos/${idtipo}`, {
+    return axiosInstance.delete(`tipos/${idtipo}`, {
         headers:{
             'Content-type':'application/json'
         }

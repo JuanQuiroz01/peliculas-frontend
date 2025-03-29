@@ -3,7 +3,7 @@ import { axiosInstance } from '../helper/axios-config';
 
 const getdirector = () => {
 
-    return axiosInstance.get('director', {
+    return axiosInstance.get('directores', {
         headers:{
             'Content-type':'application/json'
         }
@@ -12,25 +12,25 @@ const getdirector = () => {
 }
 const createdirector = (data) => {
 
-    return axiosInstance.get('director', data, {
+    return axiosInstance.post('directores', data, {
         headers:{
             'Content-type':'application/json'
         }
     });
 
 }
-const updatedirector = (directorId, data) => {
+const updatedirector = (iddirector, data) => {
 
-    return axiosInstance.get(`directores/${iddirector}`,data, {
+    return axiosInstance.put(`directores/${iddirector}`,data, {
         headers:{
             'Content-type':'application/json'
         }
     });
 
 }
-const deletedirector = (directorId) => {
+const deletedirector = (iddirector) => {
 
-    return axiosInstance.get(`directores/${iddirector}`, {
+    return axiosInstance.delete(`directores/${iddirector}`, {
         headers:{
             'Content-type':'application/json'
         }
